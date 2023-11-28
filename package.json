@@ -10,6 +10,7 @@
   "scripts": {
     "build": "vite build",
     "typecheck": "tsc --noEmit",
+    "prettier": "prettier --write \"src/**/*.ts\"",
     "run-jscodeshift": "jscodeshift --dry --print --extensions=ts -t ./dist/index.js"
   },
   "dependencies": {
