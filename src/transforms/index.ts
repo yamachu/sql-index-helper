@@ -43,7 +43,10 @@ module.exports = function transformer(file, api, options) {
         }
     });
 
-    console.dir(idWithAsts);
+    if (idWithAsts.size !== 0) {
+        console.log(file.path);
+        console.dir(idWithAsts);
+    }
 
     // NOTE: コードの解析のみに使用するため、変更せずにそのまま返している
     return file.source;
