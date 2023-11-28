@@ -1,14 +1,14 @@
 export type Position = {
-    start: number
-    end: number
-}
+    start: number;
+    end: number;
+};
 
 export type NameWithPosition = {
-    pos: Position
-    name: string
-}
+    pos: Position;
+    name: string;
+};
 
 export type ValueWithPosition = {
-    pos: Position
-    value: string
-}
+    pos: Position;
+    value: string;
+};
