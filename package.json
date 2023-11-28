@@ -1,0 +1,26 @@
+{
+  "name": "sql-index-helper",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "yamachu <yamachu.dev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "node-sql-parser": "4.11.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "18.12.5",
+    "@types/jscodeshift": "0.11.11",
+    "@types/node": "20.10.0",
+    "jscodeshift": "0.15.1",
+    "prettier": "3.1.0",
+    "typescript": "5.3.2",
+    "vite": "5.0.2"
+  }
+}
