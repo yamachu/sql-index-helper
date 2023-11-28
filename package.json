@@ -9,7 +9,8 @@
   "license": "MIT",
   "scripts": {
     "build": "vite build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "run-jscodeshift": "jscodeshift --dry --print --extensions=ts -t ./dist/index.js"
   },
   "dependencies": {
     "node-sql-parser": "4.11.0"
