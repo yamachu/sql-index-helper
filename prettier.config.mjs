@@ -1,4 +1,6 @@
 /** @type {import("prettier").Config} */
-const config = {}
+const config = {
+  tabWidth: 4,
+};
 
-export default config
+export default config;
