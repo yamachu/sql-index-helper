@@ -11,7 +11,7 @@
     "build": "vite build",
     "typecheck": "tsc --noEmit",
     "prettier": "prettier --write \"src/**/*.ts\"",
-    "run-jscodeshift": "jscodeshift --dry --print --extensions=ts -t ./dist/index.js"
+    "run-jscodeshift": "jscodeshift --dry -s --extensions=ts -t ./dist/index.js"
   },
   "dependencies": {
     "node-sql-parser": "4.11.0"
