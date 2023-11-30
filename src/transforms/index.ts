@@ -1,5 +1,5 @@
 import { Transform } from "jscodeshift";
-import { Parser, TableColumnAst } from "node-sql-parser";
+import { Parser } from "node-sql-parser";
 
 import { AppendableMap, findIdByPos } from "../utils";
 import { findParentIdentifierWithPosition } from "./find-parent-identifier";
@@ -23,30 +23,28 @@ module.exports = function transformer(file, api, options) {
 
     const parser = new Parser();
 
-    const idWithAsts = new AppendableMap<
-        string,
-        { sql: string; ast: TableColumnAst }
-    >();
+    const idWithSQLs = new AppendableMap<string, string /* SQL */>();
 
     queryCandidatesWithPos.forEach((queryCandidate) => {
         try {
-            const parsed = parser.parse(queryCandidate.value);
+            parser.parse(queryCandidate.value);
             const maybeId = findIdByPos(idsWithPos, queryCandidate.pos);
 
             // どこにも紐づいていないSQLはNO_PARENTというキーで保存する
-            idWithAsts.append(maybeId ?? "NO_PARENT", {
-                sql: queryCandidate.value,
-                ast: parsed,
-            });
+            idWithSQLs.append(maybeId ?? "NO_PARENT", queryCandidate.value);
         } catch (e) {
             // 握りつぶす
         }
     });
 
-    if (idWithAsts.size !== 0) {
-        console.log(file.path);
-        console.dir(idWithAsts);
+    if (idWithSQLs.size === 0) {
+        return file.source;
     }
+
+    /* 以下の形式でstdoutに出力される
+     REP ファイル名 {"someFunction":["SELECT * FROM users"]}
+    */
+    api.report(JSON.stringify(idWithSQLs.toJson()));
 
     // NOTE: コードの解析のみに使用するため、変更せずにそのまま返している
     return file.source;
