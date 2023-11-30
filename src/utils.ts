@@ -9,6 +9,16 @@ export class AppendableMap<K, V> extends Map<K, Array<V>> {
             this.set(key, [value]);
         }
     }
+
+    toJson(): Record<string, string[]> {
+        return [...this.entries()].reduce((prev, [k, v]) => {
+            return {
+                ...prev,
+                // @ts-ignore
+                [k]: v,
+            };
+        }, {});
+    }
 }
 
 export const findIdByPos = (
