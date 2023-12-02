@@ -43,6 +43,22 @@
             "console": "internalConsole",
             "sourceMaps": true,
             "outFiles": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Index Helper by vite-node",
+            "program": "${workspaceRoot}/src/index-helper.ts",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "stopOnEntry": false,
+            "args": ["-f", "${workspaceRoot}/example/isucon13.stdout.log"],
+            "preLaunchTask": null,
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/vite-node",
+            "console": "internalConsole",
+            "sourceMaps": true,
+            "outFiles": []
         }
     ]
 }
