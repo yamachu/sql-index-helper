@@ -23,6 +23,26 @@
             "console": "internalConsole",
             "sourceMaps": true,
             "outFiles": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Index Helper by tsimp",
+            "program": "${workspaceRoot}/src/index-helper.ts",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "stopOnEntry": false,
+            "args": ["-f", "${workspaceRoot}/example/isucon13.stdout.log"],
+            "preLaunchTask": "purge tsimp daemon file",
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy",
+                "--import=tsimp/import"
+            ],
+            "console": "internalConsole",
+            "sourceMaps": true,
+            "outFiles": []
         }
     ]
 }
