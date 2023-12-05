@@ -28,7 +28,7 @@
             "type": "node",
             "request": "launch",
             "name": "Debug Index Helper by tsimp",
-            "program": "${workspaceRoot}/src/index-helper.ts",
+            "program": "${workspaceRoot}/src/cli.ts",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -48,7 +48,7 @@
             "type": "node",
             "request": "launch",
             "name": "Debug Index Helper by vite-node",
-            "program": "${workspaceRoot}/src/index-helper.ts",
+            "program": "${workspaceRoot}/src/cli.ts",
             "skipFiles": [
                 "<node_internals>/**"
             ],
