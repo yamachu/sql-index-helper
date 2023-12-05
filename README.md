@@ -13,7 +13,7 @@ $ npm i @yamachu/sql-index-helper
 ### Collect SQL
 
 ```sh
-$ npx jscodeshift --dry -s -t node_modules/@yamachu/sql-index-helper/dist/transforms/index.js --extensions ts targetFile_or_directory > collected_sql.log
+$ npx --yes jscodeshift --dry -s -t node_modules/@yamachu/sql-index-helper/dist/transforms/index.js --extensions ts targetFile_or_directory > collected_sql.log
 ```
 
 ### Create Index
