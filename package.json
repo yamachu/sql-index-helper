@@ -12,8 +12,7 @@
   "scripts": {
     "build": "vite build",
     "typecheck": "tsc --noEmit",
-    "prettier": "prettier --write \"src/**/*.ts\"",
-    "run-jscodeshift": "jscodeshift --dry -s --extensions=ts -t ./dist/index.js"
+    "prettier": "prettier --write \"src/**/*.ts\""
   },
   "bin": "./bin/sql-index-helper",
   "dependencies": {
