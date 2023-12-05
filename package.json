@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "files": [
     "dist",
+    "bin",
     "ThirdPartyNotices.txt"
   ],
   "author": "yamachu <yamachu.dev@gmail.com>",
@@ -14,6 +15,7 @@
     "prettier": "prettier --write \"src/**/*.ts\"",
     "run-jscodeshift": "jscodeshift --dry -s --extensions=ts -t ./dist/index.js"
   },
+  "bin": "./bin/sql-index-helper",
   "dependencies": {
     "cac": "6.7.14",
     "node-sql-parser": "4.11.0"
