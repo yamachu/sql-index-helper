@@ -1,9 +1,10 @@
 {
-  "name": "sql-index-helper",
+  "name": "@yamachu/sql-index-helper",
   "version": "1.0.0",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "ThirdPartyNotices.txt"
   ],
   "author": "yamachu <yamachu.dev@gmail.com>",
   "license": "MIT",
