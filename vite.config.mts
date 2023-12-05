@@ -10,7 +10,7 @@ const libConfig: Record<LibTypes, { entry: string; fileName: string }> = {
         fileName: "transforms/index",
     },
     cli: {
-        entry: "src/index-helper.ts",
+        entry: "src/cli.ts",
         fileName: "index",
     },
 };
